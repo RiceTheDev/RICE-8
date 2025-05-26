@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.11)
-project(RICE8 CXX)
+project(RICE8)
 include(FetchContent)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -22,7 +22,15 @@ FetchContent_Declare(raylib
     GIT_PROGRESS
 )
 
+FetchContent_Declare(sfmlimgui
+    GIT_REPOSITORY https://github.com/SFML/imgui-sfml.git
+    GIT_TAG master
+    GIT_SHALLOW ON
+    GIT_PROGRESS
+)
+
 FetchContent_MakeAvailable(sol2)
+FetchContent_MakeAvailable(raylib)
 
 file(GLOB SRC_FILES
     source/*.cpp

@@ -1,4 +1,4 @@
-#include "Functions.h"
+#include "funcs.h"
 
 void init_window(int width, int height, std::string title) {
     InitWindow(width, height, title.c_str());

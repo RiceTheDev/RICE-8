@@ -1,0 +1,3 @@
+struct color {};
+
+struct sprite {};

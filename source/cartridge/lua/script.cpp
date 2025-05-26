@@ -1,6 +1,6 @@
 #include "stdio.h"
-#include "Script.h"
-#include "Functions.h"
+#include "script.h"
+#include "funcs.h"
 
 sol::state luaState;
 

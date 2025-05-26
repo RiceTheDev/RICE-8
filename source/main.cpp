@@ -1,8 +1,9 @@
 #include <string.h>
 #include <filesystem>
 #include <stdio.h>
-#include "Cartridge/Lua/Script.h"
-#include "Cartridge/Cartridge.h"
+#include "cartridge/cart.h"
+#include "cartridge/lua/script.h"
+#include "cartridge/sprite/sprite.h"
 
 int main(int argc, char *argv[]) {
     //Cartridge cart;

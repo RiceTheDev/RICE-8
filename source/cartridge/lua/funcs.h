@@ -2,7 +2,7 @@
 #define FUNCTIONS
     #include "sol/sol.hpp"
     #include "raylib.h"
-    #include "Script.h"
+    #include "script.h"
     #include "string"
     
     void init_window(int width, int height, std::string title);
