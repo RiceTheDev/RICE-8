@@ -22,13 +22,13 @@ FetchContent_Declare(raylib
     GIT_PROGRESS
 )
 
-FetchContent_Declare(sfmlimgui
-    GIT_REPOSITORY https://github.com/SFML/imgui-sfml.git
+FetchContent_Declare(
+    imgui
+    GIT_REPOSITORY https://github.com/ocornut/imgui.git
     GIT_TAG master
-    GIT_SHALLOW ON
-    GIT_PROGRESS
 )
 
+FetchContent_MakeAvailable(imgui)
 FetchContent_MakeAvailable(sol2)
 FetchContent_MakeAvailable(raylib)
 
@@ -41,9 +41,26 @@ file(GLOB SRC_FILES
     source/cartridge/lua/*.h
 )
 
+list(APPEND SRC_FILES
+    ${imgui_SOURCE_DIR}/imgui.cpp
+    ${imgui_SOURCE_DIR}/imgui_draw.cpp
+    ${imgui_SOURCE_DIR}/imgui_tables.cpp
+    ${imgui_SOURCE_DIR}/imgui_widgets.cpp
+    ${imgui_SOURCE_DIR}/imgui_demo.cpp
+    third_party/rlimgui/rlImGui.cpp
+    third_party/imgui_texteditor/TextEditor.cpp
+)
+
 add_executable(${PROJECT_NAME} ${SRC_FILES})
 
 find_package(Lua REQUIRED)
 
-target_include_directories(${PROJECT_NAME} PRIVATE ${sol2_SOURCE_DIR}/single ${LUA_INCLUDE_DIR})
+target_include_directories(${PROJECT_NAME} PRIVATE
+    ${sol2_SOURCE_DIR}/single
+    ${LUA_INCLUDE_DIR}
+    ${imgui_SOURCE_DIR}
+    third_party/rlimgui
+    third_party/imgui_texteditor
+
+)
 target_link_libraries(${PROJECT_NAME} PRIVATE sol2 raylib ${LUA_LIBRARIES})
