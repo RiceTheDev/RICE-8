@@ -1,6 +1,6 @@
+#include <stdlib.h>
 #include "lua/script.h"
 #include "cart.h"
-#include <stdlib.h>
 
 int WriteCartridge(const char *filename, const char* name, const char* code, uint32_t code_size = 22) {
     FILE* file = fopen(filename, "wb");

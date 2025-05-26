@@ -1,3 +1,9 @@
-struct color {};
+#include <raylib.h>
 
-struct sprite {};
+struct color {
+    int idx; // index of the color. 0: black, etc...
+};
+
+struct sprite {
+    Color pixel[8][8] = {};
+};

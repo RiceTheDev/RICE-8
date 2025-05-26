@@ -1,9 +1,9 @@
 #ifndef FUNCTIONS
 #define FUNCTIONS
-    #include "sol/sol.hpp"
-    #include "raylib.h"
+    #include <sol/sol.hpp>
+    #include <string>
+    #include <raylib.h>
     #include "script.h"
-    #include "string"
     
     void init_window(int width, int height, std::string title);
 

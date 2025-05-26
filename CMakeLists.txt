@@ -35,10 +35,10 @@ FetchContent_MakeAvailable(raylib)
 file(GLOB SRC_FILES
     source/*.cpp
     source/*.h
-    source/Cartridge/*.cpp
-    source/Cartridge/*.h
-    source/Cartridge/Lua/*.cpp
-    source/Cartridge/Lua/*.h
+    source/cartridge/*.cpp
+    source/cartridge/*.h
+    source/cartridge/lua/*.cpp
+    source/cartridge/lua/*.h
 )
 
 add_executable(${PROJECT_NAME} ${SRC_FILES})

@@ -13,5 +13,5 @@ struct Cartridge
 };
 
 // int WriteCartridge(const char *filename, const char* name, const char* author, const char* version, const char* description, const char* code, uint32_t code_size) {
-int WriteCartridge(const char *filename, const char* name, const char* code, uint32_t code_size = 22);
+int WriteCartridge(const char *filename, const char* name, const char* code, uint32_t code_size);
 int ReadCartridge(const char* filename);
