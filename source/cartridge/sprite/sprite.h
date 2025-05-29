@@ -1,3 +1,4 @@
+#pragma once
 #include <raylib.h>
 
 struct color {
@@ -7,3 +8,4 @@ struct color {
 struct sprite {
     Color pixel[8][8] = {};
 };
+#pragma endregion

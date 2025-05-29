@@ -35,10 +35,14 @@ FetchContent_MakeAvailable(raylib)
 file(GLOB SRC_FILES
     source/*.cpp
     source/*.h
+    source/gui/*.cpp
+    source/gui/*.h
     source/cartridge/*.cpp
     source/cartridge/*.h
     source/cartridge/lua/*.cpp
     source/cartridge/lua/*.h
+    source/cartridge/sprite/*.cpp
+    source/cartridge/sprite/*.h
 )
 
 list(APPEND SRC_FILES
@@ -49,6 +53,7 @@ list(APPEND SRC_FILES
     ${imgui_SOURCE_DIR}/imgui_demo.cpp
     third_party/rlimgui/rlImGui.cpp
     third_party/imgui_texteditor/TextEditor.cpp
+    source/gui/pixeleditor.cpp
 )
 
 add_executable(${PROJECT_NAME} ${SRC_FILES})
@@ -61,6 +66,9 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${imgui_SOURCE_DIR}
     third_party/rlimgui
     third_party/imgui_texteditor
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/cartridge
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/cartridge/lua
+    ${CMAKE_CURRENT_SOURCE_DIR}/source/cartridge/sprite
 
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE sol2 raylib ${LUA_LIBRARIES})
